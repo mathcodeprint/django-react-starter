@@ -1,0 +1,9 @@
+<h1>List of Counties in {{ state }}</h1>
+<ul>
+  {% for county in object_list %}
+      <li><a href="{% url 'town_by_county' county.id %}">{{ county }}</a></li>
+  {% empty %}
+      <li>No counties added yet.</li>
+  {% endfor %}
+</ul>
+<p><a href="{% url 'state_page' %}"><< Back to List of States</a></p>
